@@ -1,24 +1,21 @@
-# README
+# Company Blogs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a personal project that i'm working on, its for my company's website 
+It's just basic as of now but it will grow as my company matures 
 
-Things you may want to cover:
 
-* Ruby version
+Things it will include in the future:
 
-* System dependencies
+* A good home page
 
-* Configuration
+* A good collection of pages 
 
-* Database creation
+* Employee logins
 
-* Database initialization
+* Shareholder logins 
 
-* How to run the test suite
+* Blogs from employees and managers on project reports 
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Other types of stuff
 
 * ...
