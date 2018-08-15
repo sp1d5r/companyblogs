@@ -3,8 +3,6 @@ Rails.application.routes.draw do
   #
   # for the pages controller
   root'pages#home'        # this is the home action which is now also the homepage
-
-
   get 'about', to: 'pages#about'      # this is the about aciton
 
 end
