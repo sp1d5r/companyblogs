@@ -70,3 +70,33 @@ $navbar-default-bg: lightsteelblue;
   float: right;
   list-style: none;
 }
+
+.createTitle {
+  background-image: asset_url('CreateHeader.jpg');
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: bold;
+  text-decoration: underline;
+  border-style: solid;
+  background-size: cover;
+}
+
+.createTitle h1{
+  background-size: auto;
+  background-color: #2E2F30;
+}
+
+.editTitle {
+  background-image: asset_url('EditImage.jpg');
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: bold;
+  text-decoration: underline;
+  border-style: solid;
+  background-size: cover;
+}
+
+.editTitle h1{
+  background-size: auto;
+  background-color: #2E2F30;
+}
