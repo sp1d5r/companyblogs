@@ -36,8 +36,37 @@ $navbar-default-bg: lightsteelblue;
   border-style: solid;
 }
 
+.btn-xlarge {
+  background-color: #72AADD;
+}
+
 .copyright p1{
   color: #fff;
   text-align: left;
+}
 
+.footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+.image1 {
+  background-image: asset_url('AboutHeader.jpg');
+  background-size: cover;
+  height: 300px;
+}
+
+.footer a:hover{
+  color: #222;
+}
+
+.footer small {
+  float: left;
+}
+
+.footer ul{
+  float: right;
+  list-style: none;
 }
