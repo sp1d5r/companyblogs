@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   #
   # for the pages controller
   root'pages#home'        # this is the home action which is now also the homepage
-  get 'about', to: 'pages#about'      # this is the about aciton
+  get 'about', to: 'pages#about'      # this is the about action
+
+  resources :articles #this gave us a path for a new, edit, show, update, index, create and all of that
+
 
 end
