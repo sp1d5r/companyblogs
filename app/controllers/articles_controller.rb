@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
 
     before_action :set_article, only: [:edit, :update, :show, :destroy]
-
+    before_action :require_user, except: [:index, :show]
+    before_action :require_same_user, only: [:edit, :update, :destroy]
 
     def new
         @article = Article.new
@@ -12,12 +13,12 @@ class ArticlesController < ApplicationController
     end
 
     def index
-      @articles = Article.all
+      @articles = Article.paginate(page: params[:page], per_page: 5)
     end
 
     def create
       @article = Article.new(article_params)
-      @article.user = User.first
+      @article.user = current_user
       @article.save
 
       # this is the if that determines if it passed the validation check.
@@ -56,6 +57,12 @@ class ArticlesController < ApplicationController
       end
 
       def article_params
-        params.require(:article).permit(:title, :descriptions)
+        params.require(:article).permit(:title, :descriptions, category_ids: [])
+      end
+      def require_same_user
+        if current_user != @article.user and !current_user.admin?
+          flash[:danger] = "You can only edit or delete your own articles"
+          redirect_to root_path
+        end
       end
 end
