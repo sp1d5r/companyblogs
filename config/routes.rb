@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   resources :articles #this gave us a path for a new, edit, show, update, index, create and all of that
 
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 
 end

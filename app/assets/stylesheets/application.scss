@@ -126,3 +126,18 @@ $navbar-default-bg: lightsteelblue;
   padding-top: 2px;
   padding-bottom: 2px;
 }
+
+.signUpTitle {
+  background-image: asset_url('CreateHeader.jpg');
+  color: #fff;
+  letter-spacing: -1px;
+  font-weight: bold;
+  text-decoration: underline;
+  border-style: solid;
+  background-size: cover;
+}
+
+.signUpTitle h1{
+  background-size: auto;
+  background-color: #2E2F30;
+}
