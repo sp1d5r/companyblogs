@@ -12,30 +12,31 @@ class ArticlesController < ApplicationController
     end
 
     def index
-        @articles = Article.all
+      @articles = Article.all
     end
 
     def create
-        @article = Article.new(article_params)
-        @article.save
+      @article = Article.new(article_params)
+      @article.user = User.first
+      @article.save
 
-        # this is the if that determines if it passed the validation check.
-        if @article.save
-            flash[:success] = "Article was successfully created"
-            redirect_to article_path(@article)
-        else
-            render 'new'
-        end
+      # this is the if that determines if it passed the validation check.
+      if @article.save
+        flash[:success] = "Article was successfully created"
+        redirect_to article_path(@article)
+      else
+        render 'new'
+      end
 
     end
 
     def update
-        if @article.update(article_params)
-            flash[:success] = "Article was successfully updated"
-            redirect_to article_path(@article)
-        else
-            render 'edit'
-        end
+      if @article.update(article_params)
+        flash[:success] = "Article was successfully updated"
+        redirect_to article_path(@article)
+      else
+        render 'edit'
+      end
 
     end
 
@@ -43,18 +44,18 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
-        @article.destroy
-        flash[:danger] = "Article was successfully deleted"
-        redirect_to articles_path
+      @article.destroy
+      flash[:danger] = "Article was successfully deleted"
+      redirect_to articles_path
     end
 
 
     private
-        def set_article
-            @article = Article.find(params[:id])
-        end
+      def set_article
+        @article = Article.find(params[:id])
+      end
 
-        def article_params
-            params.require(:article).permit(:title, :descriptions)
-        end
+      def article_params
+        params.require(:article).permit(:title, :descriptions)
+      end
 end
